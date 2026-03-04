@@ -15,5 +15,5 @@ const lines = [
 fs.writeFileSync("./src/component-shared-models.ts", lines.join("\n"));
 console.log(`Generated ${names.length} model aliases`);
 
-// npx openapi-typescript ./swagger.json -o ./src/schema.ts
+// npx openapi-typescript swagger.json --enum -o src/schema.ts
 // node scripts/gen-schema-aliases.mjs
