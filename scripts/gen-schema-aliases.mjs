@@ -1,7 +1,8 @@
 // scripts/gen-schema-aliases.mjs
 import fs from "node:fs";
 
-const swagger = JSON.parse(fs.readFileSync("swagger.json", "utf8"));
+const swaggerPath = process.argv[2] ?? "swagger.json";
+const swagger = JSON.parse(fs.readFileSync(swaggerPath, "utf8"));
 const names = Object.keys(swagger.components?.schemas ?? {});
 
 const lines = [
@@ -16,4 +17,6 @@ fs.writeFileSync("./src/component-shared-models.ts", lines.join("\n"));
 console.log(`Generated ${names.length} model aliases`);
 
 // npx openapi-typescript swagger.json --enum -o src/schema.ts
+// npx openapi-typescript ../server/UiFrameworkServer/swagger.json --enum -o src/schema.ts
 // node scripts/gen-schema-aliases.mjs
+// node scripts/gen-schema-aliases.mjs ../server/UiFrameworkServer/swagger.json
