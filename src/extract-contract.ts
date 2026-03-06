@@ -10,13 +10,9 @@ async function main() {
   // 1) 입력 파일(schema.ts) 로드 + 출력 파일 준비
   const project = new Project({});
   const src = project.addSourceFileAtPath("./generated/schema.ts");
-  const out = project.createSourceFile(
-    "./generated/generated-contract.ts",
-    "",
-    {
-      overwrite: true,
-    },
-  );
+  const out = project.createSourceFile("./generated/contract.ts", "", {
+    overwrite: true,
+  });
 
   // 2) components.schemas 타입 리터럴 추출
   const components = src.getInterfaceOrThrow("components");
