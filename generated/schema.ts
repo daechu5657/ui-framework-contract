@@ -270,15 +270,19 @@ export interface components {
         ComponentManifestDefinition: {
             name: string | null;
             tagName: string | null;
-            baseProps: components["schemas"]["ComponentManifestPropsDefinition"][] | null;
+            baseProps: (components["schemas"]["ComponentManifestPropsStylePropertyDefinition"] | components["schemas"]["ComponentManifestPropsBehaviorPropertyDefinition"])[] | null;
             variants: string[] | null;
             variantOverrides?: {
-                [key: string]: components["schemas"]["ComponentManifestPropsDefinition"][];
+                [key: string]: (components["schemas"]["ComponentManifestPropsStylePropertyDefinition"] | components["schemas"]["ComponentManifestPropsBehaviorPropertyDefinition"])[];
             } | null;
         };
         ComponentManifestPropsBehaviorDefinition: {
             key: string | null;
         };
+        ComponentManifestPropsBehaviorPropertyDefinition: {
+            kind?: components["schemas"]["ComponentManifestPropsKind"];
+            value?: components["schemas"]["ComponentManifestPropsBehaviorDefinition"][] | null;
+        } & components["schemas"]["ComponentManifestPropsDefinition"];
         ComponentManifestPropsDefinition: {
             kind?: components["schemas"]["ComponentManifestPropsKind"];
         };
@@ -294,6 +298,10 @@ export interface components {
             valueType: components["schemas"]["StyleValueType"];
             unit?: components["schemas"]["StyleValueUnit"];
         };
+        ComponentManifestPropsStylePropertyDefinition: {
+            kind?: components["schemas"]["ComponentManifestPropsKind"];
+            value?: components["schemas"]["ComponentManifestPropsStyleDefinition"][] | null;
+        } & components["schemas"]["ComponentManifestPropsDefinition"];
         /**
          * Format: int32
          * @enum {integer}
