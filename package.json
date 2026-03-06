@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "ts-morph": "^27.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "extract": "tsx src/extract-contract.ts",
+    "build": "tsc -p tsconfig.json"
+  }
+}
