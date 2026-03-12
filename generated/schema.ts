@@ -263,10 +263,258 @@ export interface paths {
     patch?: never;
     trace?: never;
   };
+  "/Public/Schema/ComponentManifest": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["ComponentManifest"];
+            "application/json": components["schemas"]["ComponentManifest"];
+            "text/json": components["schemas"]["ComponentManifest"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/ComponentManifestVariant": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["ComponentManifestVariant"];
+            "application/json": components["schemas"]["ComponentManifestVariant"];
+            "text/json": components["schemas"]["ComponentManifestVariant"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/ComponentManifestProps": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain":
+              | components["schemas"]["ComponentManifestPropsStyleProperty"]
+              | components["schemas"]["ComponentManifestPropsBehaviorProperty"];
+            "application/json":
+              | components["schemas"]["ComponentManifestPropsStyleProperty"]
+              | components["schemas"]["ComponentManifestPropsBehaviorProperty"];
+            "text/json":
+              | components["schemas"]["ComponentManifestPropsStyleProperty"]
+              | components["schemas"]["ComponentManifestPropsBehaviorProperty"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/ComponentManifestPropsStyle": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["ComponentManifestPropsStyle"];
+            "application/json": components["schemas"]["ComponentManifestPropsStyle"];
+            "text/json": components["schemas"]["ComponentManifestPropsStyle"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/ComponentManifestPropsStyleValue": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["ComponentManifestPropsStyleValue"];
+            "application/json": components["schemas"]["ComponentManifestPropsStyleValue"];
+            "text/json": components["schemas"]["ComponentManifestPropsStyleValue"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/Public/Schema/ComponentManifestPropsBehavior": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get: {
+      parameters: {
+        query?: never;
+        header?: never;
+        path?: never;
+        cookie?: never;
+      };
+      requestBody?: never;
+      responses: {
+        /** @description OK */
+        200: {
+          headers: {
+            [name: string]: unknown;
+          };
+          content: {
+            "text/plain": components["schemas"]["ComponentManifestPropsBehavior"];
+            "application/json": components["schemas"]["ComponentManifestPropsBehavior"];
+            "text/json": components["schemas"]["ComponentManifestPropsBehavior"];
+          };
+        };
+      };
+    };
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
   schemas: {
+    ComponentManifest: {
+      id?: string | null;
+      projectId: string | null;
+      defaultVariantId: string | null;
+      variantIds: string[] | null;
+      baseProps:
+        | (
+            | components["schemas"]["ComponentManifestPropsStyleProperty"]
+            | components["schemas"]["ComponentManifestPropsBehaviorProperty"]
+          )[]
+        | null;
+      tagName: string | null;
+      name: string | null;
+      /** Format: date-time */
+      createdTime?: string;
+      /** Format: date-time */
+      updatedTime?: string;
+      /** Format: date-time */
+      deletedTime?: string | null;
+    };
     ComponentManifestDefinition: {
       name: string | null;
       tagName: string | null;
@@ -284,9 +532,19 @@ export interface components {
         )[];
       } | null;
     };
+    ComponentManifestProps: {
+      kind?: components["schemas"]["ComponentManifestPropsKind"];
+    };
+    ComponentManifestPropsBehavior: {
+      key: string | null;
+    };
     ComponentManifestPropsBehaviorDefinition: {
       key: string | null;
     };
+    ComponentManifestPropsBehaviorProperty: {
+      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      value?: components["schemas"]["ComponentManifestPropsBehavior"][] | null;
+    } & components["schemas"]["ComponentManifestProps"];
     ComponentManifestPropsBehaviorPropertyDefinition: {
       kind?: components["schemas"]["ComponentManifestPropsKind"];
       value?:
@@ -301,6 +559,15 @@ export interface components {
      * @enum {integer}
      */
     ComponentManifestPropsKind: ComponentManifestPropsKind;
+    ComponentManifestPropsStyle: {
+      designTokenIds: string[] | null;
+      key: string | null;
+      name: string | null;
+      cssProperty: string | null;
+      valueType: components["schemas"]["StyleValueType"];
+      value: components["schemas"]["ComponentManifestPropsStyleValue"];
+      unit?: components["schemas"]["StyleValueUnit"];
+    };
     ComponentManifestPropsStyleDefinition: {
       key: string | null;
       name: string | null;
@@ -308,17 +575,51 @@ export interface components {
       valueType: components["schemas"]["StyleValueType"];
       unit?: components["schemas"]["StyleValueUnit"];
     };
+    ComponentManifestPropsStyleProperty: {
+      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      value?: components["schemas"]["ComponentManifestPropsStyle"][] | null;
+    } & components["schemas"]["ComponentManifestProps"];
     ComponentManifestPropsStylePropertyDefinition: {
       kind?: components["schemas"]["ComponentManifestPropsKind"];
       value?:
         | components["schemas"]["ComponentManifestPropsStyleDefinition"][]
         | null;
     } & components["schemas"]["ComponentManifestPropsDefinition"];
+    ComponentManifestPropsStyleValue: {
+      designTokenId?: string | null;
+      designTokenValueId?: string | null;
+      kind: components["schemas"]["ComponentManifestPropsStyleValueKind"];
+      valueType: components["schemas"]["StyleValueType"];
+      stringValue?: string | null;
+      /** Format: int32 */
+      numberValue?: number | null;
+    };
     /**
      * Format: int32
      * @enum {integer}
      */
     ComponentManifestPropsStyleValueKind: ComponentManifestPropsStyleValueKind;
+    ComponentManifestVariant: {
+      id?: string | null;
+      projectId: string | null;
+      componentManifestId: string | null;
+      propsOverride:
+        | (
+            | components["schemas"]["ComponentManifestPropsStyleProperty"]
+            | components["schemas"]["ComponentManifestPropsBehaviorProperty"]
+          )[]
+        | null;
+      key: string | null;
+      name: string | null;
+      /** Format: int32 */
+      order?: number;
+      /** Format: date-time */
+      createdTime?: string;
+      /** Format: date-time */
+      updatedTime?: string;
+      /** Format: date-time */
+      deletedTime?: string | null;
+    };
     /**
      * Format: int32
      * @enum {integer}
