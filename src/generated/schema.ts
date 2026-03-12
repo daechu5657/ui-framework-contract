@@ -616,15 +616,56 @@ export interface components {
       key: string | null;
     };
     ComponentManifestPropsBehaviorProperty: {
-      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      /**
+       * Format: int32
+       * @enum {integer}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyKind;
       value?: components["schemas"]["ComponentManifestPropsBehavior"][] | null;
-    } & components["schemas"]["ComponentManifestProps"];
+    } & (Omit<
+      WithRequired<components["schemas"]["ComponentManifestProps"], "kind">,
+      "kind"
+    > & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyKind;
+    } & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyKind;
+    });
     ComponentManifestPropsBehaviorPropertyDefinition: {
-      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      /**
+       * Format: int32
+       * @enum {integer}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
       value?:
         | components["schemas"]["ComponentManifestPropsBehaviorDefinition"][]
         | null;
-    } & components["schemas"]["ComponentManifestPropsDefinition"];
+    } & (Omit<
+      WithRequired<
+        components["schemas"]["ComponentManifestPropsDefinition"],
+        "kind"
+      >,
+      "kind"
+    > & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
+    } & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsBehaviorPropertyDefinitionKind;
+    });
     ComponentManifestPropsDefinition: {
       kind?: components["schemas"]["ComponentManifestPropsKind"];
     };
@@ -650,15 +691,56 @@ export interface components {
       unit?: components["schemas"]["StyleValueUnit"];
     };
     ComponentManifestPropsStyleProperty: {
-      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      /**
+       * Format: int32
+       * @enum {integer}
+       */
+      kind: ComponentManifestPropsStylePropertyKind;
       value?: components["schemas"]["ComponentManifestPropsStyle"][] | null;
-    } & components["schemas"]["ComponentManifestProps"];
+    } & (Omit<
+      WithRequired<components["schemas"]["ComponentManifestProps"], "kind">,
+      "kind"
+    > & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsStylePropertyKind;
+    } & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsStylePropertyKind;
+    });
     ComponentManifestPropsStylePropertyDefinition: {
-      kind?: components["schemas"]["ComponentManifestPropsKind"];
+      /**
+       * Format: int32
+       * @enum {integer}
+       */
+      kind: ComponentManifestPropsStylePropertyDefinitionKind;
       value?:
         | components["schemas"]["ComponentManifestPropsStyleDefinition"][]
         | null;
-    } & components["schemas"]["ComponentManifestPropsDefinition"];
+    } & (Omit<
+      WithRequired<
+        components["schemas"]["ComponentManifestPropsDefinition"],
+        "kind"
+      >,
+      "kind"
+    > & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsStylePropertyDefinitionKind;
+    } & {
+      /**
+       * @description discriminator enum property added by openapi-typescript
+       * @enum {string}
+       */
+      kind: ComponentManifestPropsStylePropertyDefinitionKind;
+    });
     ComponentManifestPropsStyleValue: {
       designTokenId?: string | null;
       designTokenValueId?: string | null;
@@ -751,9 +833,48 @@ export interface components {
   pathItems: never;
 }
 export type $defs = Record<string, never>;
+export enum ComponentManifestPropsBehaviorPropertyKind {
+  Behavior = 1,
+}
+type WithRequired<T, K extends keyof T> = T & {
+  [P in K]-?: T[P];
+};
+export enum ComponentManifestPropsBehaviorPropertyKind {
+  Behavior = "Behavior",
+}
+export enum ComponentManifestPropsBehaviorPropertyKind {
+  Behavior = "Behavior",
+}
+export enum ComponentManifestPropsBehaviorPropertyDefinitionKind {
+  Behavior = 1,
+}
+export enum ComponentManifestPropsBehaviorPropertyDefinitionKind {
+  Behavior = "Behavior",
+}
+export enum ComponentManifestPropsBehaviorPropertyDefinitionKind {
+  Behavior = "Behavior",
+}
 export enum ComponentManifestPropsKind {
   Style = 0,
   Behavior = 1,
+}
+export enum ComponentManifestPropsStylePropertyKind {
+  Style = 0,
+}
+export enum ComponentManifestPropsStylePropertyKind {
+  Style = "Style",
+}
+export enum ComponentManifestPropsStylePropertyKind {
+  Style = "Style",
+}
+export enum ComponentManifestPropsStylePropertyDefinitionKind {
+  Style = 0,
+}
+export enum ComponentManifestPropsStylePropertyDefinitionKind {
+  Style = "Style",
+}
+export enum ComponentManifestPropsStylePropertyDefinitionKind {
+  Style = "Style",
 }
 export enum ComponentManifestPropsStyleValueKind {
   Unset = 0,
